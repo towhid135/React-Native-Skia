@@ -10,9 +10,10 @@ import {
   View,
 } from 'react-native';
 import HelloWorld from './components/HelloWorld';
+import Animated3DCard from './components/Animated3DCard';
 
 const App = () => {
-  return <HelloWorld />;
+  return <Animated3DCard />;
 };
 
 const styles = StyleSheet.create({
