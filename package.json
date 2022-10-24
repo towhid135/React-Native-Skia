@@ -8,7 +8,9 @@
     "start": "react-native start",
     "test": "jest",
     "lint": "eslint .",
-    "reset": "yarn start --reset-cache"
+    "reset": "yarn start --reset-cache",
+    "clean-install-start": "yarn clean-install && yarn start",
+    "gradlew-clean": "cd android && ./gradlew clean"
   },
   "dependencies": {
     "@shopify/react-native-skia": "^0.1.140",
