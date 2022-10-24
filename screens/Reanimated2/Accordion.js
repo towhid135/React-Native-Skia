@@ -10,6 +10,7 @@ import Animated, {
 } from 'react-native-reanimated';
 import Rp from '../../constant/Rp';
 
+//accordion
 const Accordion = () => {
   const [show, setShow] = useState(false);
   return (
