@@ -62,7 +62,7 @@ const styles = StyleSheet.create({
     // shadowOpacity: 0.8,
     // shadowRadius: 10,
     // shadowOffset: {width: 0, height: 2},
-    width: '80%',
+    width: Rp(800),
     alignItems: 'center',
     justifyContent: 'center',
     borderWidth: 1,
@@ -74,7 +74,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
   accordionTextHolderView: {
-    width: '80%',
+    width: Rp(800),
     backgroundColor: 'gray',
     borderWidth: 1,
   },
