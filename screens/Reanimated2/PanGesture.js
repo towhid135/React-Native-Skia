@@ -10,9 +10,10 @@ import Animated, {
   withDecay,
 } from 'react-native-reanimated';
 import Rp from '../../constant/Rp';
-import {clamp,withBouncing} from 'react-native-redash'
+import {clamp, withBouncing} from 'react-native-redash';
 
 const {height, width} = Dimensions.get('window');
+import card1 from '../../assets/Images/card1.png';
 
 const cardHeight = Rp(500);
 const cardWidth = Rp(800);
@@ -26,16 +27,32 @@ const PanGesture = () => {
       ctx.offsetY = translateY.value;
     },
     onActive: (event, ctx) => {
-      translateX.value = clamp(ctx.offsetX + event.translationX,0,width-cardWidth);
-      translateY.value = clamp(ctx.offsetY + event.translationY,0,height-cardHeight);
+      translateX.value = clamp(
+        ctx.offsetX + event.translationX,
+        0,
+        width - cardWidth,
+      );
+      translateY.value = clamp(
+        ctx.offsetY + event.translationY,
+        0,
+        height - cardHeight,
+      );
     },
     onEnd: event => {
-      translateX.value = withBouncing(withDecay({
-        velocity: event.velocityX,
-      }),0,width - cardWidth)
-      translateY.value = withBouncing(withDecay({
-        velocity: event.velocityY,
-      }),0,height-cardHeight)
+      translateX.value = withBouncing(
+        withDecay({
+          velocity: event.velocityX,
+        }),
+        0,
+        width - cardWidth,
+      );
+      translateY.value = withBouncing(
+        withDecay({
+          velocity: event.velocityY,
+        }),
+        0,
+        height - cardHeight,
+      );
     },
   });
 
@@ -51,7 +68,11 @@ const PanGesture = () => {
     <View style={styles.container}>
       <PanGestureHandler onGestureEvent={gestureEvent}>
         <Animated.View style={[styles.cardContainerView, animatedStyle]}>
-          <Card cardHeight={cardHeight} cardWidth={cardWidth} />
+          <Card
+            imagePath={card1}
+            cardHeight={cardHeight}
+            cardWidth={cardWidth}
+          />
         </Animated.View>
       </PanGestureHandler>
     </View>
