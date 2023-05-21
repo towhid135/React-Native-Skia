@@ -1,6 +1,7 @@
 import Accordion from "../screens/Reanimated2/Accordion"
 import Animated3DCard from "../components/Skia/Animated3DCard"
 import PanGesture from "../screens/Reanimated2/PanGesture"
+import Transition from "../screens/Reanimated2/Transition"
 export default [
     {
         name: "Accordion",
@@ -13,5 +14,9 @@ export default [
     {
         name: "PanGesture",
         component: PanGesture
+    },
+    {
+        name: "Transition",
+        component: Transition
     }
 ]
