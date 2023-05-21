@@ -8,6 +8,7 @@
     "start": "react-native start",
     "test": "jest",
     "lint": "eslint .",
+    "cache-reset": "react-native start --reset-cache",
     "reset": "yarn start --reset-cache",
     "clean-install-start": "yarn clean-install && yarn start",
     "gradlew-clean": "cd android && ./gradlew clean"
