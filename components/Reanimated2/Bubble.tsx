@@ -13,15 +13,11 @@ interface BubbleProps {
   progress: SharedValue<number>;
   start: number;
   end: number;
+  size: number;
 }
 
-const size = Rp(80);
-
 const Bubble: React.FC<BubbleProps> = props => {
-  const {progress, start, end} = props;
-  console.log('start: ', start);
-  console.log('end: ', end);
-  console.log('progress: ', progress);
+  const {progress, start, end, size} = props;
   const bubbleAnimationStyle = useAnimatedStyle(() => {
     const scale = interpolate(
       progress.value,
@@ -35,21 +31,21 @@ const Bubble: React.FC<BubbleProps> = props => {
       [1, 0.5],
       Extrapolate.CLAMP,
     );
-    // console.log('scale: ', scale);
+
     return {
       opacity,
       transform: [{scale}],
     };
   });
+  const styles = StyleSheet.create({
+    container: {
+      height: Rp(size),
+      width: Rp(size),
+      borderRadius: Rp(size / 2),
+      backgroundColor: '#3884ff',
+    },
+  });
   return <Animated.View style={[styles.container, bubbleAnimationStyle]} />;
 };
 
-const styles = StyleSheet.create({
-  container: {
-    height: size,
-    width: size,
-    borderRadius: size / 2,
-    backgroundColor: '#3884ff',
-  },
-});
 export default Bubble;

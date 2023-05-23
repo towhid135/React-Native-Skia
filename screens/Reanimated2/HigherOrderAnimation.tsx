@@ -27,7 +27,7 @@ const HigherOrderAnimation: React.FC = () => {
   };
   return (
     <View style={styles.container}>
-      <ChatBubble progress={progress} />
+      <ChatBubble width={800} height={800} progress={progress} />
       <View style={{marginTop: Rp(25)}}>
         <Button title={state ? 'Pause' : 'Start'} onPress={btnHandler} />
       </View>
