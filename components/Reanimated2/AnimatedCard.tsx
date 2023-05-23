@@ -21,10 +21,10 @@ interface AnimatedCardProps {
   cardWidth: number;
   index: number;
   isResetPressed: SharedValue<any>;
-  transition: any;
+  transition: SharedValue<number>;
 }
 
-const AnimatedCard = (props: AnimatedCardProps) => {
+const AnimatedCard: React.FC<AnimatedCardProps> = props => {
   const {imagePath, cardHeight, cardWidth, index, isResetPressed, transition} =
     props;
   const index_ = useSharedValue(index);
